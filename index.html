@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   </head>
   <body>
-      <header>
+      <header class="container">
           <nav class="navbar navbar-expand-sm navbar-light bg-light">
               <a class="navbar-brand" href="#">
                   <img src="./images/logo.png" alt="">
@@ -47,44 +47,110 @@
           </nav>
       </header>
       <!-- banner -->
-      <div>
-          <h4>Tasty cakes and Ice-cream<br>for everyone</h4>
-          <div>
-              <a href="#">See our menu</a>
-          </div>
-          <ul>
-              <li><span>0</span></li>
-              <li><span>1</span></li>
-              <li><span>2</span></li>
-          </ul>
+      <div class="container-fluid">
+        <div class="container text-center">
+            <h4>Tasty cakes and Ice-cream<br>for everyone</h4>
+            <div>
+                <a href="#">See our menu</a>
+            </div>
+            <ul>
+                <li><span>0</span></li>
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+            </ul>
+        </div>
       </div>
+        
       <!-- main -->
-      <div>
-          <div>
+      <div class="row">
+          <div class="col">
               <img src="./images/icon-1.png" alt="">
               <h4>Coffee</h4>
               <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
               <a href="#">Read more</a>
           </div>
-          <div>
+          <div class="col">
               <img src="./images/icon-2.png" alt="">
               <h4>Drinks</h4>
               <div>Fugit qui similique quidem at porro, voluptatem velit?</div>
               <a href="#">Read more</a>
           </div>
-          <div>
+          <div class="col">
               <img src="./images/icon-3.png" alt="">
               <h4>Cakes</h4>
               <div>Vel animi quam, voluptatem iusto sit non. Culpa!</div>
               <a href="#">Read more</a>
           </div>
-          <div>
+          <div class="col">
               <img src="./images/icon-4.png" alt="">
               <h4>Ice-cream</h4>
               <div>Quia, ducimus! A molestiae dolore vitae quia nulla!</div>
               <a href="#">Read more</a>
           </div>
       </div>
+      <!-- about -->
+      <div>
+          <div>
+              <h3>About us</h3>
+              <div>
+                  <img src="./images/icon-about.png" alt="">
+                  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo corrupti magnam dolore nobis, doloremque animi natus laboriosam eligendi eius recusandae, molestiae iusto laudantium.</div>
+                  <div>Illum, illo maiores dolore sint asperiores voluptatibus id ad rem quos rerum fugit. Perferendis at dolor aspernatur. <a href="#">Read more</a></div>
+              </div>
+          </div>
+          <div>
+              <form action="post">
+                  <h3>Newsletter<br>Sign Up</h3>
+                  <div>Please, write an e-mail:</div>
+                  <input type="email" name="email" id="email"><br>
+                  <button type="submit">SIGN UP</button>
+              </form>
+          </div>
+      </div>
+      <!-- news -->
+      <div>
+          <h3>News</h3>
+          <div class="row">
+              <div class="col">
+                  <div></div>
+                  <div>
+                      <h3>Lorem, ipsum.</h3>
+                      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                  </div>
+                  <a href="#">Read more</a>
+              </div>
+              <div class="col">
+                  <div></div>
+                  <div>
+                      <h3>Eum, error!</h3>
+                      <div>A et voluptate ullam sapiente, ducimus eligendi aut?</div>
+                  </div>
+                  <a href="#">Read more</a>
+              </div>
+              <div class="col">
+                  <div></div>
+                  <div>
+                      <h3>Velit, aperiam.</h3>
+                      <div>Consequuntur magnam temporibus modi inventore tempore tenetur iste.</div>
+                  </div>
+                  <a href="#">Read more</a>
+              </div>
+          </div>
+      </div>
+      <footer>
+          <nav>
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Menu</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contacts</a></li>
+              </ul>
+          </nav>
+          <div>
+              Ice-cream &copy; 2019 | <a href="#">PRIVACY POLICY</a>
+          </div>
+      </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="./js/jquery-3.3.1.min.js"></script>
