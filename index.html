@@ -8,21 +8,22 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/20880012.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa+One" type="text/css">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   </head>
   <body>
       <header class="container">
-          <nav class="navbar navbar-expand-sm navbar-light bg-light">
-              <a class="navbar-brand" href="#">
-                  <img src="./images/logo.png" alt="">
+          <nav class="navbar navbar-expand-sm navbar-light">
+              <a class="navbar-brand" href="#" id="logo">
+                  <img src="./images/logo.png" alt="" >
               </a>
-              <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+              <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu"
                   aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="collapsibleNavId">
-                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <div class="collapse navbar-collapse justify-content-end" id="menu">
+                  <ul class="navbar-nav mt-2 mt-lg-0">
                       <li class="nav-item active">
                           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                       </li>
@@ -40,22 +41,30 @@
                       </li>
                       
                   </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  <form class="form-inline my-2 my-lg-0" id="form-search">
+                      <div class="input-group input-group-sm">
+                        <input class="form-control" type="text" placeholder="Search" id="searchword">
+                        <div class="input-group-append">
+                            <button class="btn" type="submit" id="btn-search"></button>
+                        </div>
+                      </div>
                   </form>
+                  <div id="social">
+                        <a href="#" class="btn twitter"></a>
+                        <a href="#" class="btn facebook"></a>
+                  </div>
               </div>
           </nav>
       </header>
       <!-- banner -->
-      <div class="container-fluid">
+      <div class="container-fluid" id="banner">
         <div class="container text-center">
             <h4>Tasty cakes and Ice-cream<br>for everyone</h4>
             <div>
-                <a href="#">See our menu</a>
+                <a id="btn-menu" href="#">See our menu</a>
             </div>
-            <ul>
-                <li><span>0</span></li>
+            <ul id="dots">
+                <li class="active"><span>0</span></li>
                 <li><span>1</span></li>
                 <li><span>2</span></li>
             </ul>
@@ -64,46 +73,46 @@
         
       <!-- main -->
       <div class="container" id="main">
-        <div class="row">
+        <div class="row my-5">
             <div class="col-md-3 col-sm-6">
                 <img src="./images/icon-1.png" alt="">
                 <h4>Coffee</h4>
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                <a href="#">Read more</a>
+                <div class="pb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                <a class= "readmore" href="#">Read more</a>
             </div>
             <div class="col-md-3 col-sm-6">
                 <img src="./images/icon-2.png" alt="">
                 <h4>Drinks</h4>
-                <div>Fugit qui similique quidem at porro, voluptatem velit?</div>
-                <a href="#">Read more</a>
+                <div class="pb-2">Fugit qui similique quidem at porro, voluptatem velit?</div>
+                <a class= "readmore" href="#">Read more</a>
             </div>
             <div class="col-md-3 col-sm-6">
                 <img src="./images/icon-3.png" alt="">
                 <h4>Cakes</h4>
-                <div>Vel animi quam, voluptatem iusto sit non. Culpa!</div>
-                <a href="#">Read more</a>
+                <div class="pb-2">Vel animi quam, voluptatem iusto sit non. Culpa!</div>
+                <a class= "readmore" href="#">Read more</a>
             </div>
             <div class="col-md-3 col-sm-6">
                 <img src="./images/icon-4.png" alt="">
                 <h4>Ice-cream</h4>
-                <div>Quia, ducimus! A molestiae dolore vitae quia nulla!</div>
-                <a href="#">Read more</a>
+                <div class="pb-2">Quia, ducimus! A molestiae dolore vitae quia nulla!</div>
+                <a class= "readmore" href="#">Read more</a>
             </div>
         </div>
     </div>
       <!-- about -->
-      <div class="container-fluid">
+      <div class="container-fluid about py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
                     <h3>About us</h3>
-                    <div>
+                    <div class="pt-3">
                         <img src="./images/icon-about.png" alt="">
                         <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo corrupti magnam dolore nobis, doloremque animi natus laboriosam eligendi eius recusandae, molestiae iusto laudantium.</div>
                         <div>Illum, illo maiores dolore sint asperiores voluptatibus id ad rem quos rerum fugit. Perferendis at dolor aspernatur. <a href="#">Read more</a></div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3" id="frm-signup">
                     <form action="post">
                         <h3>Newsletter<br>Sign Up</h3>
                         <div>Please, write an e-mail:</div>
