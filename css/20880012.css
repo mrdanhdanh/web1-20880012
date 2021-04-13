@@ -8,7 +8,10 @@ body {
 #logo {
     position: relative;
 }
-
+#menu li{
+    margin-left: 25px;
+    padding: 0;
+}
 
 #menu li a {
     font-family: 'Changa One', cursive;
@@ -241,27 +244,39 @@ footer div {
 footer div a {
     color: #B7bbbb;
 }
-@media screen and (min-width: 768px) {
-    #menu li{
-        margin-left: 25px;
-        padding: 0;
-    }
-    #logo::after {
-        position: absolute;
-        content: "";
-        background: url(../images/logo_bg.png) 0 0 no-repeat;
-        width: 188px;
-        height: 133px;
-        bottom: -140px;
-        left: -2px;
-    }
-    #form-search::after{
-        position: absolute;
-        content: "";
-        background: url(../images/search_bg.png) 0 0 no-repeat;
-        width: 230px;
-        height: 44px;
-        bottom: -72px;
-        left: 10px;
-    }
+
+
+/*About page*/
+#line-banner {
+    background: url(../images/bg_slider.gif) center top repeat;
+    content:"";
+    padding: 3px;
+}
+
+#ab-about .demuc {
+    padding: 30px 0;
+}
+
+#ab-about img {
+    float:left;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+#ab-about-right div {
+    padding-bottom: 30px;
+}
+
+#ab-testi {
+    background-color: #fa97c2;
+}
+#ab-testi .col {
+    background: url(../images/quot.png) top left no-repeat;
+    padding-left: 50px;
+}
+#ab-testi .row {
+    margin-left: 0px;
+}
+
+#ab-team img {
+    border-radius: 10px;
 }
