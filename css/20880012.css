@@ -280,3 +280,14 @@ footer div a {
 #ab-team img {
     border-radius: 10px;
 }
+
+/*Menu page*/
+#mn-sp img {
+    float: left;
+    border-radius: 15px;
+    margin: 0 20px 20px 0;
+    width: 40%;
+}
+#mn .col {
+    padding-bottom: 15px;
+}
