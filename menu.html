@@ -63,39 +63,39 @@
           <div class="container py-4">
             <h3 class="demuc">Menu</h3>
             <div>Filter by category:</div>
-            <a href="">Show all</a>
-            <a href="">First Category</a>
-            <a href="">Second Category</a>
-            <a href="">Third Category</a>
+            <a href="#" onclick="cateselect(0)">Show all</a>
+            <a href="#" onclick="cateselect(1)">First Category</a>
+            <a href="#" onclick="cateselect(2)">Second Category</a>
+            <a href="#" onclick="cateselect(3)">Third Category</a>
             <div class="row">
-                <div class="col col-md-4" id="mn1">
+                <div class="col col-md-4" id="mn0">
                     <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb1.jpg" alt=""></a>
                 </div>
-                <div class="col col-md-4" id="mn2">
+                <div class="col col-md-4" id="mn1">
                     <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb2.jpg" alt=""></a>
                 </div>
-                <div class="col col-md-4" id="mn3">
+                <div class="col col-md-4" id="mn2">
                     <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb3.jpg" alt=""></a>
                 </div>
-                <div class="col col-md-4" id="mn4">
+                <div class="col col-md-4" id="mn3">
                     <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb4.jpg" alt=""></a>
                 </div>
-                <div class="col col-md-4" id="mn5">
+                <div class="col col-md-4" id="mn4">
                     <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb5.jpg" alt=""></a>
                 </div>
-                <div class="col col-md-4" id="mn6">
+                <div class="col col-md-4" id="mn5">
                     <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb6.jpg" alt=""></a>
                 </div>
-                <div class="col col-md-4" id="mn7">
+                <div class="col col-md-4" id="mn6">
                     <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb7.jpg" alt=""></a>
                 </div>
-                <div class="col col-md-4" id="mn8">
+                <div class="col col-md-4" id="mn7">
                     <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb8.jpg" alt=""></a>
                 </div>
-                <div class="col col-md-4" id="mn9">
+                <div class="col col-md-4" id="mn8">
                     <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb9.jpg" alt=""></a>
                 </div>
-                <div class="col col-md-4" id="mn10">
+                <div class="col col-md-4" id="mn9">
                     <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb10.jpg" alt=""></a>
                 </div>
                 
@@ -116,6 +116,22 @@
               Ice-cream &copy; 2019 | <a href="#">PRIVACY POLICY</a>
           </div>
       </footer>
+      <script>
+          var gcate = [1,1,1,1,2,2,2,3,3,3];
+          function cateselect(cate) {
+              for (i = 0; i<gcate.length; i++) {
+                  cateid = 'mn' + i;
+                  
+                  if (cate==0) {
+                    $(document.getElementById(cateid)).show();
+                  } else if (gcate[i] == cate) {
+                    $(document.getElementById(cateid)).show();
+                  } else {
+                    $(document.getElementById(cateid)).hide()
+                  }
+              }
+          }
+      </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="./js/jquery-3.3.1.min.js"></script>
