@@ -8,15 +8,17 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
     <link rel="stylesheet" href="./css/20880012.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa+One" type="text/css">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   </head>
   <body>
-      <title>20880012 - Ice-cream - About</title>
+      <title>20880012 - Ice-cream - Contact</title>
       <header class="container">
           <nav class="navbar navbar-expand-sm navbar-light">
-              <a class="navbar-brand" href="#" id="logo">
+              <a class="navbar-brand" href="index.html" id="logo">
                   <img src="./images/logo.png" alt="" >
               </a>
               <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu"
@@ -28,14 +30,14 @@
                       <li class="nav-item ">
                           <a class="nav-link" href="index.html">Home </a>
                       </li>
-                      <li class="nav-item active">
-                          <a class="nav-link" href="about.html">About<span class="sr-only">(current)</span></a>
+                      <li class="nav-item ">
+                          <a class="nav-link" href="about.html">About</a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item active">
                           <a class="nav-link" href="menu.html">Menu</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="blog.html">Blog</a>
+                          <a class="nav-link" href="blog.html">Blog<span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="contact.html">Contacts</a>
@@ -57,14 +59,77 @@
               </div>
           </nav>
       </header>
-      
+      <div class="container-fluid" id="line-banner">
+      </div>
+        <div class="container-fluid" id="contact">
+            <div class="container">
+                <h3 class="demuc">Contacts</h3>
+                <div id="map" class="map" style="height: 400px;"></div>
+                <script src="./js/map.js"></script>
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <h3 class="demuc">Address:</h3>
+                        <p>138 Atlantis Ln<br>Kingsport<br>Illinois 121164</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <h3 class="demuc">Phone:</h3>
+                        <p>+1 800 559 6580<br>+1 504 889 9898</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <h3 class="demuc">E-mail:</h3>
+                        <p><a href="mailto:mail@demolink.org">mail@demolink.org</a><br><i>Download information as: <span style="color: #43ace3;">vCard</span></i></p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="demuc">Miscellaneous information:</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptas atque illum modi sit laudantium, eligendi blanditiis harum, odio porro, perferendis sint unde itaque inventore. A vitae perspiciatis eaque exercitationem? Labore nobis impedit, molestias possimus optio maiores, quidem ullam error delectus non quos laboriosam! Ipsum beatae atque et nam provident.</p>
+                    <i>Send an email. All fields with an * are required</i><br><br>
+                    <form action="" method="POST">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                  <label for="name">Name *</label>
+                                  <input type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                  <label for="name">Email *</label>
+                                  <input type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId" required> 
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                  <label for="name">Subject *</label>
+                                  <input type="text" name="subj" id="subj" class="form-control" placeholder="" aria-describedby="helpId" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="">Message *</label>
+                          <textarea class="form-control" name="mess" id="mess" rows="5" required></textarea>
+                        </div>
+                        <div class="text-right">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="copy" id="copy" value="checkedValue"> Send copy to yourself
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-link">Send Email</button>
+                        </div>
+                    </form>
+                </div>
+
+    </div>
+</div>
       <footer class="container-fluid">
           <nav>
               <ul>
                   <li><a href="index.html">Home</a></li>
                   <li><a href="about.html">About</a></li>
                   <li><a href="menu.html">Menu</a></li>
-                  <li><a href="blog.html">Blog</a></li>
+                  <li class="active"><a href="blog.html">Blog</a></li>
                   <li><a href="contact.html">Contacts</a></li>
               </ul>
           </nav>
@@ -72,10 +137,14 @@
               Ice-cream &copy; 2019 | <a href="#">PRIVACY POLICY</a>
           </div>
       </footer>
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/handlebars-v4.7.7.js"></script>
+    <script src="./js/20880012.js"></script>
+    
   </body>
 </html>
