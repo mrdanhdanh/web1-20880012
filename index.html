@@ -74,31 +74,8 @@
         
       <!-- main -->
       <div class="container" id="main">
-        <div class="row my-5">
-            <div class="col-md-3 col-sm-6">
-                <img src="./images/icon-1.png" alt="">
-                <h4>Coffee</h4>
-                <div class="pb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                <a class= "readmore" href="#">Read more</a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <img src="./images/icon-2.png" alt="">
-                <h4>Drinks</h4>
-                <div class="pb-2">Fugit qui similique quidem at porro, voluptatem velit?</div>
-                <a class= "readmore" href="#">Read more</a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <img src="./images/icon-3.png" alt="">
-                <h4>Cakes</h4>
-                <div class="pb-2">Vel animi quam, voluptatem iusto sit non. Culpa!</div>
-                <a class= "readmore" href="#">Read more</a>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <img src="./images/icon-4.png" alt="">
-                <h4>Ice-cream</h4>
-                <div class="pb-2">Quia, ducimus! A molestiae dolore vitae quia nulla!</div>
-                <a class= "readmore" href="#">Read more</a>
-            </div>
+        <div class="row my-5" id="products">
+           
         </div>
     </div>
       <!-- about -->
@@ -116,7 +93,7 @@
                 </div>
                 <div class="col-md-3" >
                     <form action="post" id="frm-signup">
-                        <h3>Newsletter<br>Sign Up</h3>
+                        <h3 class="changa">Newsletter<br>Sign Up</h3>
                         <div>Please, write an e-mail:</div>
                         <input type="email" name="email" id="email"><br>
                         <button type="submit">SIGN UP</button>
@@ -196,5 +173,37 @@
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/handlebars-v4.7.7.js"></script>
+    <script id="products-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="col-md-3 col-sm-6">
+            <img src="{{thumbpath}}" alt="">
+            <h4>{{name}}</h4>
+            <div class="pb-2">{{summary}}</div>
+            <a class= "readmore" href="#">Read more</a>
+        </div>
+        {{/each}}
+    </script>
+    <script>
+        $(document).ready(function(){
+            loadData('http://web1-api.herokuapp.com/api/products','#products','#products-template');
+
+        });
+        function loadData(request, targetId, sourceId) {
+                $.ajax({
+                url: request,
+                cache: false,
+                success: function(data){
+                    let jsonData = {
+                        data: data
+                    };
+                    let target = $(targetId);
+                    let source = $(sourceId).html();
+                    let template = Handlebars.compile(source);
+                    $(target).html(template((jsonData)));
+                }
+            });
+        };
+    </script>
   </body>
 </html>
