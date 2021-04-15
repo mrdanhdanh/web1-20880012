@@ -293,3 +293,6 @@ footer div a {
 #mn .col {
     padding-bottom: 15px;
 }
+.noClick {
+    pointer-events: none;
+ }

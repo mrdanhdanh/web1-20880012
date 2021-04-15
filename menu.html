@@ -59,49 +59,18 @@
       </header>
       <div class="container-fluid" id="line-banner">
       </div>
+      <div id="content">
       <div class="container-fluid" id="mn">
           <div class="container py-4">
             <h3 class="demuc">Menu</h3>
             <div>Filter by category:</div>
-            <a href="#" onclick="cateselect(0)">Show all</a>
-            <a href="#" onclick="cateselect(1)">First Category</a>
-            <a href="#" onclick="cateselect(2)">Second Category</a>
-            <a href="#" onclick="cateselect(3)">Third Category</a>
-            <div class="row">
-                <div class="col col-md-4" id="mn0">
-                    <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb1.jpg" alt=""></a>
-                </div>
-                <div class="col col-md-4" id="mn1">
-                    <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb2.jpg" alt=""></a>
-                </div>
-                <div class="col col-md-4" id="mn2">
-                    <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb3.jpg" alt=""></a>
-                </div>
-                <div class="col col-md-4" id="mn3">
-                    <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb4.jpg" alt=""></a>
-                </div>
-                <div class="col col-md-4" id="mn4">
-                    <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb5.jpg" alt=""></a>
-                </div>
-                <div class="col col-md-4" id="mn5">
-                    <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb6.jpg" alt=""></a>
-                </div>
-                <div class="col col-md-4" id="mn6">
-                    <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb7.jpg" alt=""></a>
-                </div>
-                <div class="col col-md-4" id="mn7">
-                    <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb8.jpg" alt=""></a>
-                </div>
-                <div class="col col-md-4" id="mn8">
-                    <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb9.jpg" alt=""></a>
-                </div>
-                <div class="col col-md-4" id="mn9">
-                    <a href="./menu/suspendisse.html"><img src="./images/gallery/gallery-thumb10.jpg" alt=""></a>
-                </div>
-                
+            <ul class="nav justify-content-left" id="cate-filter">
+            </ul>
+            <div class="row" id="gallery">
             </div>
         </div>
         </div>
+    </div>
       <footer class="container-fluid">
           <nav>
               <ul>
@@ -137,5 +106,46 @@
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/handlebars-v4.7.7.js"></script>
+    <script src="./js/20880012.js"></script>
+    <script id="cate-filter-template" type="text/x-handlebars-template">
+        <li class="nav-item">
+            <a class="nav-link disabled pl-0" href="#" id="cate0" onclick="load_cate(0)">Show all</a>
+        </li>
+        {{#each data}}
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="cate{{id}}" onclick="load_cate({{id}})">{{name}}</a>
+        </li>
+        {{/each}}
+    </script>
+    <script id="gallery-template" type="text/x-handlebars-template" >
+        {{#each data}}
+        <div class="col col-md-4">
+            <a href="./menu/suspendisse.html"><img src="{{thumbpath}}" alt=""></a>
+        </div>
+        {{/each}}
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            loadData('gallery-categories','#cate-filter','#cate-filter-template');
+            loadData('gallery','#gallery','#gallery-template');
+        });
+
+        function load_cate(id) {
+            $("#cate-filter .nav-link").each(function(){
+                $("#cate-filter .nav-link").removeClass("disabled", "noClick");
+            });
+            cate_id = "#cate" + id;
+            $(cate_id).addClass("disabled", "noClick");
+            if (id==0) {
+                loadData('gallery', '#gallery','#gallery-template');
+            } else {
+                var link_id = 'gallery/categories/' + id;
+                loadData(link_id, '#gallery','#gallery-template');
+            }
+        }
+
+    </script>
   </body>
 </html>

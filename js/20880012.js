@@ -1,3 +1,4 @@
+var links = 'http://web1-api.herokuapp.com/api/';
 function loadData(request, targetId, sourceId) {
     var full_request = links + request;
     $.ajax({
