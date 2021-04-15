@@ -57,6 +57,7 @@
               </div>
           </nav>
       </header>
+      <div id="content">
       <!-- banner -->
       <div class="container-fluid" id="banner">
         <div class="container text-center">
@@ -88,7 +89,7 @@
                         <img src="./images/icon-about.png" alt="">
                         <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo corrupti magnam dolore nobis, doloremque animi natus laboriosam eligendi eius recusandae, molestiae iusto laudantium. Dolor sit amet consectetur adipisicing elit. Quo corrupti magnam dolore nobis</div>
                         <br>
-                        <div>Illum, illo maiores dolore sint asperiores voluptatibus id ad rem quos rerum fugit. Perferendis at dolor aspernatur. <a href="#">Read more</a></div>
+                        <div>Illum, illo maiores dolore sint asperiores voluptatibus id ad rem quos rerum fugit. Perferendis at dolor aspernatur. <a href="#" onclick="loadData('aboutus', '#content', '#detail-template')">Read more</a></div>
                     </div>
                 </div>
                 <div class="col-md-3" >
@@ -107,53 +108,12 @@
       <div class="container-fluid py-5" id="news">
         <div class="container">
             <h3 class="demuc">News</h3>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="ngay">
-                                25.<br>Dec.
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3 class="changa">Lorem, ipsum.</h3>
-                            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                        </div>
-                    </div>
-                    <a href="#">Read more</a>
-                </div>
-                <div class="col-md-4">
-                    <div class="row ">
-                        <div class="col-sm-4">
-                            <div class="ngay">
-                                25.<br>Dec.
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3 class="changa">Eum, error!</h3>
-                            <div>A et voluptate ullam sapiente, ducimus eligendi aut?</div>
-                        </div>
-                    </div>
-                    <a href="#">Read more</a>
-                </div>
-                <div class="col-md-4">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="ngay">
-                                25.<br>Dec.
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3 class="changa">Velit, aperiam.</h3>
-                            <div>Consequuntur magnam temporibus modi inventore tempore tenetur iste.</div>
-                        </div>
-                    </div>
-                    <a href="#">Read more</a>
-                </div>
-
+            <div class="row" id="news-cont">
+                
             </div>
         </div>
         </div>
+    </div>
       <footer class="container-fluid">
           <nav>
               <ul>
@@ -174,36 +134,52 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/handlebars-v4.7.7.js"></script>
+    <script id="detail-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="container-fluid" id="line-banner"></div>
+        <div class="container-fluid">
+            <div class="container py-4">
+                <h3 class="demuc">{{name}}</h3>
+                <div>{{{description}}}</div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
     <script id="products-template" type="text/x-handlebars-template">
         {{#each data}}
         <div class="col-md-3 col-sm-6">
             <img src="{{thumbpath}}" alt="">
             <h4>{{name}}</h4>
             <div class="pb-2">{{summary}}</div>
-            <a class= "readmore" href="#">Read more</a>
+            <a class= "readmore" href="#" onclick="loadData('products/{{id}}', '#content', '#detail-template')">Read more</a>
         </div>
         {{/each}}
     </script>
+    <script id="news-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="ngay">
+                        {{date}}
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <h3 class="changa">{{name}}</h3>
+                    <div>{{summary}}</div>
+                </div>
+            </div>
+            <a href="#" onclick="loadData('news/{{id}}', '#content', '#detail-template')">Read more</a>
+        </div>
+        {{/each}}
+    </script>
+    <script src="./js/20880012.js"></script>
     <script>
+        var links = 'http://web1-api.herokuapp.com/api/';
         $(document).ready(function(){
-            loadData('http://web1-api.herokuapp.com/api/products','#products','#products-template');
-
+            loadData('products','#products','#products-template');
+            loadData('news','#news-cont','#news-template');
         });
-        function loadData(request, targetId, sourceId) {
-                $.ajax({
-                url: request,
-                cache: false,
-                success: function(data){
-                    let jsonData = {
-                        data: data
-                    };
-                    let target = $(targetId);
-                    let source = $(sourceId).html();
-                    let template = Handlebars.compile(source);
-                    $(target).html(template((jsonData)));
-                }
-            });
-        };
     </script>
   </body>
 </html>
